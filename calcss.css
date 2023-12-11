@@ -1,0 +1,179 @@
+/* опишем базовый стиль кнопки калькулятора */
+.my-btn { 
+    margin-right: 5px;           /* задаем отступ от кнопки справа */
+    margin-top: 5px;             /* задаем отступ от кнопки сверху*/
+    width: 50px;                 /* задаем ширину кнопки */
+    height: 50px;                /* задаем высоту кнопки */
+    
+    border: none;                /* отключаем обводку */
+    background: #ff0000;         /* задаем серый цвет кнопки */
+    color: rgb(174, 0, 255);                /* задаем белый цвет текста внутри кнопки */
+    font-size: 1.5rem;           /* увеличим размер шрифта */
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    cursor: pointer;             /* при наведении на кнопку курсор будет изменен
+                                    со стрелки на 'указательный палец' */
+    user-select: none;           /* отключаем возможность выделить текст внутри кнопки */
+  } 
+  
+  /* hover - это состояние элемента, когда на него наведен курсор */
+  .my-btn:hover {
+    background: rgb(0, 83, 11); /* при наведение курсора на кнопку, она будет окрашена в серый */
+  }
+  
+  /* active - это состояние активации элемента. В случае кнопки - нажатие на нее */
+  .my-btn:active {
+    filter: brightness(70%); /* увеличим интенсивность цвета для эффекта вспышки */
+  }
+  
+  /* селектор для кнопок первостепенных операций */
+  .my-btn.primary { 
+    background: #e6ff01; /* цвет кнопки оранжевый */
+  }
+  
+  /* селектор для кнопок второстепенных операций */
+  .my-btn.secondary { 
+    background: #ff0000; /* цвет кнопки сервый */
+  }
+  
+  /* селектор для кнопки расчета выражения (=) */
+  .my-btn.execute { 
+    width: 105px;          /* сделаем кнопку шире других */
+  }
+  
+  /* селектор для поля вывода результата */
+  .result { 
+    width: 240px;          /* сделаем кнопку шире других */
+    height: 60px;                /* задаем высоту кнопки */
+    border-radius: 10px;
+    margin-bottom: 15px;         /* отступ снизу */
+    padding-right: 10px;         /* выступ справа */
+
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    
+    background: rgb(217, 255, 0); /* цвет можно задавать и таким образом */
+    text-align: right;           /* примагнитим текст к правой стороне */
+    color: rgb(174, 0, 255);              /* цвет текста белый */
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .but{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(0%, +100%);
+  }
+
+  .text{
+    position: absolute;
+    bottom: 0;
+    color: rgb(174, 0, 255);
+    font-size: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+  }
+
+  .theme{
+    position: absolute;
+    bottom: 200;
+    background-color: #ff0000;
+    border: none;
+    color: rgb(217, 255, 0);
+    width: 100px;                 /* задаем ширину кнопки */
+    height: 50px;                /* задаем высоту кнопки */
+    justify-self: right;
+  }
+
+  .theme:active{
+    background-color: rgb(174, 0, 255);
+    
+  }
+
+  .body{
+    background-image: url("https://i2.wp.com/sciartica.net/wp-content/uploads/2015/08/TrueRandom2.png?fit=1754%2C1140&ssl=1");
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .buton{
+    display: inline-block;
+    background: #8C959D;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    border-radius: 3px;
+  }
+  .btn:active + .content{
+    background: blue;
+}
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* Контейнер <div> - необходим для размещения выпадающего содержимого */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Выпадающее содержимое (скрыто по умолчанию) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Ссылки внутри выпадающего списка */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Изменение цвета выпадающих ссылок при наведении курсора */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Показать выпадающее меню при наведении курсора */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Изменение цвета фона кнопки раскрывающегося списка при отображении содержимого раскрывающегося списка */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.rainbow{
+  color: #fff;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+
+  /*
+Поменяйте цветовую палитру калькулятора с оранжево-серой на любую другую;******
+Сделайте фон калькулятора темным (наподобие ночной темы);               ****
+Сделайте кнопки квадратными вместо круглых.;                            ****
+Измените цвет вывода результата на любой другой;                        *******
+Сделайте окно вывода со скруглеными краями;                             ****
+Поменяйте шрифт цифр;                                                   ****
+Сделайте шрифт более толстым;                                           ****
+Измените цвет при наведении мышки на кнопку на другой;                  ****
+Добавьте надпись внизу "ЛР выполнена ФИО";                              ****
+Выровняйте калькулятор по центру;                                       ****
+Увеличьте размер окна вывода;                                           ****
+Добавьте кнопку для смены темы (смена цвета фона);                      ****
+Сделайте шрифт тоньше;                                                  ****
+Смените цвет шрифта;                                                    ****
+Добавьте любое изображение на фон;                                      ****
+Добавьте кнопку со ссылкой на GitHub;                                   ****
+Сделайте поле с выпадающим списком;                                     ****
+Сделайте сворачивающиеся и разворачивающиеся подробности (Автор -> ФИО, Группа);****
+Добавьте поле с целью ЛР и подсветить слова: знакомство, HTML, CSS (с помощью тега).****
+*/
