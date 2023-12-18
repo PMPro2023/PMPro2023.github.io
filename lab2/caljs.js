@@ -2,9 +2,9 @@ window.onload = function(){
 
     let a = '0'
     let b = '0'
+    let c = '0'
     let expressionResult = ''
     let selectedOperation = null
-    let selectedOperationn = null
     function factorial(n) {
         let result = 1;
         for(let i = 1; i <= n; i++) {
@@ -16,8 +16,6 @@ window.onload = function(){
         
         return result;
     }
-    var pdigits = []
-    var mdigits = []
 
     // окно вывода результата
     outputElement = document.getElementById("result")
@@ -59,15 +57,28 @@ window.onload = function(){
         selectedOperation = 'x'
     }
     document.getElementById("btn_op_plus").onclick = function() { 
-        if (a === '0') return
-        pdigits.push(outputElement.innerHTML)
-        a = '0'
-        selectedOperation = '+'
+        if (!selectedOperation) {
+            c = (+c) + (+a)
+            selectedOperation = '+'
+        }
+        else{
+            c = (+c) + (+b)
+        }
+        a = c
+        b = '0'
+        outputElement.innerHTML = c
     }
     document.getElementById("btn_op_minus").onclick = function() { 
-        if (a === '0') return
-        mdigits.push(a)
-        selectedOperation = '-'
+        if (!selectedOperation) {
+            c = (+c) - (+a)
+            selectedOperation = '+'
+        }
+        else{
+            c = (+c) - (+b)
+        }
+        a = c
+        b = '0'
+        outputElement.innerHTML = c
     }
     document.getElementById("btn_op_div").onclick = function() { 
         if (a === '0') return
@@ -174,6 +185,7 @@ window.onload = function(){
     document.getElementById("btn_op_clear").onclick = function() { 
         a = '0'
         b = '0'
+        c = '0'
         selectedOperation = ''
         expressionResult = ''
         outputElement.innerHTML = 0
@@ -187,17 +199,6 @@ window.onload = function(){
         switch(selectedOperation) { 
             case 'x':
                 expressionResult = (+a) * (+b)
-                break;
-            case '+':
-                expressionResult = (+a) + (+b)
-                for ( let i = 0; i < pdigits.length; i++)
-                {
-                    b = pdigits[i]
-                    expressionResult = (+expressionResult) + (+b)
-                }
-                break;
-            case '-':
-                expressionResult = (+a) - (+b)
                 break;
             case '/':
                 expressionResult = (+a) / (+b)
@@ -224,7 +225,7 @@ window.onload = function(){
 6.Запрограммируйте операцию возведения в квадрат x²;                                                                                        ****
 7.Запрограммируйте операцию вычисления факториала x!;                                                                                       ****
 8.Добавьте кнопку, которая за раз добавляет сразу три нуля (000);                                                                           ****
-9.Запрограммируйте накапливаемое сложние;                                                                                                   
-10.Запрограммируйте накапливаемое вычитание;                                                                                                
+9.Запрограммируйте накапливаемое сложние;                                                                                                   ****
+10.Запрограммируйте накапливаемое вычитание;                                                                                                ****
 11.Сделайте смену цвета окна вывода результата по кнопке.                                                                                   ****
     */
